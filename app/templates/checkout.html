@@ -2,6 +2,10 @@
 
 {% block title %}Finalizar Pedido - Cafeteria{% endblock %}
 
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/checkout.css') }}">
+{% endblock %}
+
 {% block content %}
 <section class="checkout">
     <h1 class="title"><span>Finalizar</span> Pedido</h1>

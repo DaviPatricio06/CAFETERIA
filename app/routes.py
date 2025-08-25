@@ -22,6 +22,19 @@ def salvar_csv(carrinho):
         for item in carrinho:
             writer.writerow(item)
 
+def salvar_pedido(nome, telefone, endereco, carrinho):
+    """Salva um pedido completo em data/pedidos.csv"""
+    caminho = os.path.join("data", "pedidos.csv")
+    os.makedirs("data", exist_ok=True)
+    arquivo_existe = os.path.exists(caminho)
+
+    with open(caminho, "a", newline="", encoding="utf-8") as arquivo_csv:
+        writer = csv.writer(arquivo_csv)
+        if not arquivo_existe:
+            writer.writerow(["nome", "telefone", "endereco", "produto", "preco"])
+        for item in carrinho:
+            writer.writerow([nome, telefone, endereco, item["nome"], item["preco"]])
+
 # -----------------------------
 # Rotas principais
 # -----------------------------
@@ -97,17 +110,8 @@ def checkout():
         telefone = request.form.get("telefone")
         endereco = request.form.get("endereco")
 
-        itens = "; ".join([f"{item['nome']} (R$ {item['preco']:.2f})" for item in session["carrinho"]])
-
-        caminho = os.path.join("data", "pedidos.csv")
-        os.makedirs("data", exist_ok=True)
-        arquivo_existe = os.path.exists(caminho)
-
-        with open(caminho, "a", newline="", encoding="utf-8") as arquivo_csv:
-            writer = csv.writer(arquivo_csv)
-            if not arquivo_existe:
-                writer.writerow(["nome", "telefone", "endereco", "itens"])
-            writer.writerow([nome, telefone, endereco, itens])
+        # salva o pedido no CSV
+        salvar_pedido(nome, telefone, endereco, session["carrinho"])
 
         # limpa carrinho após finalizar
         session["carrinho"] = []

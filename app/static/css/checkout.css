@@ -1,0 +1,62 @@
+/* Checkout */
+.checkout {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #13131a;
+    border-radius: 8px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.checkout h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.checkout form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.checkout label {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    display: block;
+    color: #d3ad7f;
+}
+
+.checkout input,
+.checkout textarea {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #444;
+    outline: none;
+    background: #1f1f27;
+    color: #fff;
+    transition: border 0.3s;
+}
+
+.checkout input:focus,
+.checkout textarea:focus {
+    border: 1px solid #d3ad7f;
+}
+
+.checkout button {
+    background: #d3ad7f;
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.checkout button:hover {
+    background: #b89567;
+}

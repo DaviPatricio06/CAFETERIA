@@ -24,13 +24,16 @@
             <tr>
                 <td>{{ item.nome }}</td>
                 <td>R$ {{ "%.2f"|format(item.preco) }}</td>
-                <td><a href="{{ url_for('main.remove_from_cart', index=loop.index0) }}">Remover</a></td>
+                <td><a href="{{ url_for('main.remove_from_cart', index=loop.index0) }}" class="remove-link">Remover</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{{ url_for('main.menu') }}" class="btn">Continuar Comprando</a>
-    <a href="{{ url_for('main.checkout') }}" class="btn">Finalizar Pedido</a>
+
+    <div class="cart-actions">
+        <a href="{{ url_for('main.menu') }}" class="btn">Continuar Comprando</a>
+        <a href="{{ url_for('main.checkout') }}" class="btn">Finalizar Pedido</a>
+    </div>
     {% else %}
     <p>Seu carrinho está vazio.</p>
     {% endif %}

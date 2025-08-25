@@ -1,29 +1,84 @@
-/* Estilo específico do carrinho */
+/* ============================
+   Carrinho - cart.html
+============================ */
+
 .cart {
-    max-width: 800px;
+    max-width: 900px;
     margin: 3rem auto;
     padding: 2rem;
     text-align: center;
+    color: #fff;
+}
+
+.cart h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.cart h1 span {
+    color: #d3ad7f;
 }
 
 .cart table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 2rem;
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
-.cart th,
-.cart td {
-    border: var(--border);
+.cart table th,
+.cart table td {
     padding: 1rem;
-    color: #fff;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    font-size: 1.2rem;
 }
 
-.cart a {
-    color: var(--main-color);
+.cart table th {
+    background: #d3ad7f;
+    color: #13131a;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cart table tr:last-child td {
+    border-bottom: none;
+}
+
+.remove-link {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.remove-link:hover {
+    color: #ff1a1a;
+    text-decoration: underline;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cart .btn {
+    background: #d3ad7f;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s;
     text-decoration: none;
 }
 
-.cart a:hover {
-    text-decoration: underline;
+.cart .btn:hover {
+    background: #b89567;
 }
