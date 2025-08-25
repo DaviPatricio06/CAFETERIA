@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Menu - Cafeteria{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="menu">
+    <h1 class="title"><span>Nosso</span> Menu</h1>
+
+    <div class="box-container">
+
+        <!-- Produto 1 -->
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/menu-2.png') }}" alt="Café Expresso">
+            <h3>Café Expresso</h3>
+            <p>R$ 5,00</p>
+            <form action="{{ url_for('main.add_to_cart') }}" method="POST">
+                <input type="hidden" name="nome" value="Café Expresso">
+                <input type="hidden" name="preco" value="5.00">
+                <button type="submit" class="btn">Adicionar ao Carrinho</button>
+            </form>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/menu-1.png') }}" alt="Cappuccino">
+            <h3>Cappuccino</h3>
+            <p>R$ 8,00</p>
+            <form action="{{ url_for('main.add_to_cart') }}" method="POST">
+                <input type="hidden" name="nome" value="Cappuccino">
+                <input type="hidden" name="preco" value="8.00">
+                <button type="submit" class="btn">Adicionar ao Carrinho</button>
+            </form>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/menu-3.png') }}" alt="Latte">
+            <h3>Latte</h3>
+            <p>R$ 7,00</p>
+            <form action="{{ url_for('main.add_to_cart') }}" method="POST">
+                <input type="hidden" name="nome" value="Latte">
+                <input type="hidden" name="preco" value="7.00">
+                <button type="submit" class="btn">Adicionar ao Carrinho</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

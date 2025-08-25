@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Sobre Nós - Cafeteria{% endblock %}
+
+{% block content %}
+<section class="about">
+    <h1 class="title"><span>Sobre</span> Nós</h1>
+    <div class="row">
+        <div class="container-image">
+            <img src="{{ url_for('static', filename='images/about-img.jpg') }}" alt="Cafeteria">
+        </div>
+        <div class="content">
+            <h3>Nossa História</h3>
+            <p>O Café DevPoint é um espaço especialmente pensado para desenvolvedores que buscam unir produtividade,
+                conforto e networking em um só lugar. Com um ambiente moderno, tomadas em todas as mesas, Wi-Fi de alta
+                velocidade e estações de trabalho individuais ou compartilhadas, o café oferece a estrutura ideal para
+                quem precisa codar por horas sem interrupções. Além disso, o cardápio foi pensado para manter a energia
+                dos devs: cafés especiais, snacks saudáveis e refeições leves completam a experiência.
+
+            <p>Mais do que um simples café, o DevPoint também funciona como ponto de encontro para a comunidade tech.
+                Workshops, meetups e sessões de pair programming são realizados semanalmente, incentivando a troca de
+                conhecimento e a colaboração entre profissionais de diversas áreas da tecnologia. Se você é dev, sabe o
+                quanto é importante um lugar onde café forte e código limpo caminham juntos — e aqui, essa é a essência.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}

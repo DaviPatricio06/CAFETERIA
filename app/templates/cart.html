@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Carrinho - Cafeteria{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="cart">
+    <h1 class="title"><span>Seu</span> Carrinho</h1>
+
+    {% if carrinho %}
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in carrinho %}
+            <tr>
+                <td>{{ item.nome }}</td>
+                <td>R$ {{ "%.2f"|format(item.preco) }}</td>
+                <td><a href="{{ url_for('main.remove_from_cart', index=loop.index0) }}">Remover</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('main.menu') }}" class="btn">Continuar Comprando</a>
+    <a href="{{ url_for('main.checkout') }}" class="btn">Finalizar Pedido</a>
+    {% else %}
+    <p>Seu carrinho está vazio.</p>
+    {% endif %}
+</section>
+{% endblock %}

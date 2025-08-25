@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Início - Cafeteria{% endblock %}
+
+{% block content %}
+<section class="home-container">
+    <section>
+        <div class="content">
+            <h3>Bem-vindo à Cafeteria!</h3>
+            <p>O melhor café da cidade te espera ☕🍰</p>
+            <a href="{{ url_for('main.menu') }}" class="btn">Veja nosso Menu</a>
+        </div>
+    </section>
+</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+/* Estilo específico do carrinho */
+.cart {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.cart table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.cart th,
+.cart td {
+    border: var(--border);
+    padding: 1rem;
+    color: #fff;
+}
+
+.cart a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.cart a:hover {
+    text-decoration: underline;
+}

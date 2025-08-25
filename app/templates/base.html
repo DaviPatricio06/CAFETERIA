@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cafeteria{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block page_css %}{% endblock %}
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a href="{{ url_for('main.index') }}" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Cafeteria">
+            </a>
+
+            <nav class="navbar">
+                <a href="{{ url_for('main.index') }}">Início</a>
+                <a href="{{ url_for('main.menu') }}">Menu</a>
+                <a href="{{ url_for('main.about') }}">Sobre</a>
+                <a href="{{ url_for('main.address') }}">Endereço</a>
+                <a href="{{ url_for('main.review') }}">Avaliações</a>
+                <a href="{{ url_for('main.cart') }}">Carrinho</a>
+            </nav>
+        </section>
+    </header>
+
+    <main style="margin-top: 100px;">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Cafeteria - Todos os direitos reservados</p>
+    </footer>
+</body>
+
+</html>

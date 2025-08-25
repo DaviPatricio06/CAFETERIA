@@ -1,0 +1,48 @@
+/* ===========================
+   Landing Page - index.html
+=========================== */
+.home-container {
+    background: url("../img/home-img.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home-container .content h3 {
+    font-size: 6rem;
+    color: #fff;
+}
+
+.home-container .content p {
+    font-size: 2rem;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.home-container .btn {
+    background-color: #d3ad7f;
+    padding: 1rem 3rem;
+    color: #fff;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+.home-container .btn:hover {
+    letter-spacing: 0.1rem;
+    background-color: #b89567;
+}
+
+@media (max-width: 768px) {
+    .home-container .content h3 {
+        font-size: 3rem;
+    }
+    .home-container .content p {
+        font-size: 1.6rem;
+    }
+}
